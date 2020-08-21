@@ -50,7 +50,7 @@ Output is also printed to the console by passing `$stdout` as though it's a MIDI
 ```ruby
 MIDI.using(@input, @output, $stdout) do
 
-  thru_except :note { |msg| only(msg, :octave, (1..3)) }
+  thru_except(:note) { |msg| only(msg, :octave, (1..3)) }
 
   join
 
